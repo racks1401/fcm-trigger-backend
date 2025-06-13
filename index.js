@@ -5,11 +5,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Load service account
-const serviceAccount = require("./service-account.json");
+const serviceAccount = require("/etc/secrets/service-account.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
+
 
 app.use(bodyParser.json());
 
